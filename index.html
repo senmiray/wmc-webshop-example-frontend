@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="./img/favicon.ico" />
+    <!-- Latest compiled and minified CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./app.js" defer></script>
+    <title>Webshop</title>
+  </head>
+  <body>
+    <div class="container mt-4 p-4 bg-success rounded text-white text-center">
+      <h1>Webshop Demo</h1>
+      <h3>3AHIF - WMC - Webshop - 202425</h3>
+    </div>
+
+    <!-- Produktliste -->
+    <div class="container my-4">
+      <div class="row">
+        <div class="col">
+          <h1>GET api/products (list all Products stored in our DB)</h1>
+          <!-- Filter-Sektion -->
+          <div class="mb-3">
+            <label for="minPrice" class="form-label">Min Price:</label>
+            <input
+              type="number"
+              id="minPrice"
+              class="form-control d-inline w-auto"
+              placeholder="Min Price"
+            />
+
+            <label for="maxPrice" class="form-label ms-3">Max Price:</label>
+            <input
+              type="number"
+              id="maxPrice"
+              class="form-control d-inline w-auto"
+              placeholder="Max Price"
+            />
+
+            <button id="btnFilterProducts" class="btn btn-primary ms-3">
+              Filter
+            </button>
+          </div>
+
+          <!-- Such-Sektion -->
+          <div class="mb-3">
+            <label for="searchTerm" class="form-label">Search:</label>
+            <input
+              type="text"
+              id="searchTerm"
+              class="form-control d-inline w-auto"
+              placeholder="Product name"
+            />
+            <button id="btnSearchProducts" class="btn btn-primary ms-3">
+              Search
+            </button>
+          </div>
+
+          <!-- Produkte laden -->
+          <div>
+            <button id="btnLoadProducts" type="button" class="btn btn-primary">
+              Load Products
+            </button>
+          </div>
+          <!-- Produktliste -->
+          <div>
+            <ul id="productsList" class="list-group mt-3"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Neues Produkt hinzufügen -->
+    <div class="container my-4">
+      <div class="row">
+        <div class="col">
+          <h1>POST api/products (add a new Product)</h1>
+          <div>
+            <form id="createProductForm" class="mt-3">
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="name"
+                  name="name"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="price"
+                  name="price"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea
+                  class="form-control"
+                  id="description"
+                  name="description"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">
+                Create Product
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
